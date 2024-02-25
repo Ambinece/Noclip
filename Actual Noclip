@@ -1,0 +1,26 @@
+local Character = game.Players.LocalPlayer.Character
+
+-- Noclip
+local characterSettings = {
+      Character.Head,
+      Character.Torso,
+      Character["Left Arm"],
+      Character["Right Arm"],
+      Character["Left Leg"],
+      Character["Right Leg"],
+      Character.HumanoidRootPart
+}
+
+-- Set CanCollide to false for each character part.
+for _, part in ipairs(characterSettings) do
+      part.CanCollide = false
+end
+
+-- Loop to maintain character settings.
+while true do
+      wait() -- Adjust the delay as needed
+      -- Reset character settings to ensure they remain as desired.
+      for _, part in ipairs(characterSettings) do
+            part.CanCollide = false
+      end
+end
